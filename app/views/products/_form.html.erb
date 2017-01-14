@@ -1,7 +1,7 @@
-<%= form_for(product) do |f| %>
+<%= simple_form_for(product) do |f| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(product.errors.count, "error") %> Gambar anda tidak bisa di Upload. Kami siap membantu</h2>
 
       <ul>
       <% product.errors.full_messages.each do |message| %>
@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.input :name, label: 'Apa yang akan anda sewakan' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :description, placeholder: 'Disewakan murah, syarat mudah' %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.input :image, as: :file %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, 'Daftarkan', class: "btn btn-success" %>
   </div>
 <% end %>
