@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test. This app have been building by Ali Sulas Hidayat
 
 Things you may want to cover:
 
