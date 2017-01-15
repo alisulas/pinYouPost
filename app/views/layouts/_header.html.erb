@@ -1,0 +1,18 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <%= link_to "Sewabro", root_path, class: "navbar-brand" %>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class: "nav-item"><%= link_to "Sewakan", new_product_path %></li>
+          <li><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+          <li><%= link_to "Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

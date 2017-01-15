@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "products") %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="col-md-9 box">
+  <%= image_tag @product.image.url(:medium)%>
+
+    <h2><%= link_to @product.name, product_path %></h2>
+    <p><%= @product.description %></p>
+</div>
+
+<div class="col-md-3">
+    <p class="user"> Penjual: <%= @product.user.name %> </p>
+</div>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+

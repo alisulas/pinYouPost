@@ -8,14 +8,19 @@
 
 body {
   padding-top: 60px;
+  background: #E9E9E9;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  
+ }
 
 section {
   overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+  min-height: 250px;
 }
 
 .center {
@@ -24,4 +29,41 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+
+nav {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  .navbar-brand {
+    color: #FF1E23;
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+footer {
+  background: #080700;
+  .footer-wrapper  {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    h2 {
+      color: #f70867;
+      margin-bottom: 0px;
+    }
+    .foot-nav {
+      margin-left: 0px
+    }
+  }
+  p {
+    margin-top: 150px;
+  }
+}
+
+
+.debug_dump {
+  margin: 19px 30px 12px 30px
 }

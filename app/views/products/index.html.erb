@@ -1,16 +1,17 @@
 <% provide(:title, "products") %>
 
-<p id="notice"><%= notice %> AKu </p>
-
-<div class="container">
+<div id="products">
   <% @products.each do |product| %>
-  <div class="thumbnail">
+  <div class="col-sm-3 box panel panel-default">
     <%= link_to (image_tag product.image.url(:medium)), product %>
     <h2><%= link_to product.name, product %></h2>
     <p><%= product.description %></p>
-    <p class="user"> Penjual <%= product.user.email %> </p>
-  </div>
+    <p class="user"> Penjual: <%= product.user.name %> </p>
+ 
+  
   <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' %>
   <%= link_to 'Destroy', product, class: 'btn btn-success', method: :delete, data: { confirm: 'Are you sure?' } %>
+   </div>
   <% end %> 
+  
 </div>
