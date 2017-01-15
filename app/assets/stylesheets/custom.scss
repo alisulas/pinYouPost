@@ -12,8 +12,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  
- }
+
+}
 
 section {
   overflow: auto;
@@ -31,21 +31,28 @@ textarea {
   margin-bottom: 10px;
 }
 
-
-nav {
+header {
+  font-weight: bold;
+  font-size: 1.7em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-  .navbar-brand {
-    color: #FF1E23;
-    font-weight: bold;
-    &:hover {
-      text-decoration: none;
+  background: #5cb772;
+  color: white;
+  .navbar .navbar-fixed-top {
+    overflow: visible;
+    .navbar-inner {
+      border-bottom: 1px solid #d9d9d9;
     }
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
   }
 }
 
 
 footer {
   background: #080700;
+  border-top: 1px solid #ff5ddd;
   .footer-wrapper  {
     margin-top: 15px;
     margin-bottom: 5px;

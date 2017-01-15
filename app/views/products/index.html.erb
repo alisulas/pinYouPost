@@ -1,17 +1,32 @@
 <% provide(:title, "products") %>
 
+
+
+
+<h1 align="center">Listing products</h1>
 <div id="products">
-  <% @products.each do |product| %>
-  <div class="col-sm-3 box panel panel-default">
-    <%= link_to (image_tag product.image.url(:medium)), product %>
-    <h2><%= link_to product.name, product %></h2>
-    <p><%= product.description %></p>
-    <p class="user"> Penjual: <%= product.user.name %> </p>
- 
-  
-  <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' %>
-  <%= link_to 'Destroy', product, class: 'btn btn-success', method: :delete, data: { confirm: 'Are you sure?' } %>
+<% @products.each_slice(3) do |products| %>
+<div class="row">
+  <% products.each do |product| %>
+  <div class="col-md-4">
+   <div class="box">
+     <%= link_to (image_tag product.image.url(:medium), class: 'list_image btn-danger', size: '300x300'), product %>
+     <div class="details">
+       <h2><%= link_to product.name, product %></h2>
+       <span class="price">Rp. 300.000 </span>
+       <p class="description"><%= truncate(product.description, :length => 180) %></p>       
+       <p class="user"> Penjual: <%= product.user.name %> </p>
+       <div class="action">
+        <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' %>
+        <%= link_to 'Destroy', product, class: 'btn btn-success', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+       
+     </div>
    </div>
-  <% end %> 
-  
-</div>
+   <% end %>    
+ </div>
+ <hr/>
+ <% end %>
+ </div>
+
