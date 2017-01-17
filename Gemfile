@@ -47,8 +47,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
-  gem 'guard-rspec', require: false
-  gem 'rspec-rails', '~> 3.6.0.beta2'
+  gem 'rspec-rails', '~> 3.5.0.beta3'
   gem "capybara"
   gem 'factory_girl_rails'
 end
@@ -72,6 +71,7 @@ group :development do
   gem 'better_errors',          '~> 2.1'
   gem "binding_of_caller"
   gem 'awesome_print',          '~> 1.7'
+  gem 'guard-rspec', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
