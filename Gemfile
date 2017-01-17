@@ -72,6 +72,7 @@ group :development do
   gem "binding_of_caller"
   gem 'awesome_print',          '~> 1.7'
   gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard', '~> 1.6.1' #integrate Mac notify on upper window
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
