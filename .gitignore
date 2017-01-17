@@ -22,6 +22,9 @@
 # Ignore Spring files.
 /spring/*.pid
 
+
+/bin/
+
 *.rbc
 capybara-*.html
 .rspec
