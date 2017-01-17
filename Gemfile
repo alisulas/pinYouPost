@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'thor', '0.19.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -42,10 +43,21 @@ gem 'simple_form'
 
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.6.0.beta2'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5.0.beta3'
+  gem "capybara"
+  gem 'factory_girl_rails'
+end
+
+
+group :test do
+  gem "database_cleaner"
+  gem 'faker',                   '1.4.2'
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
 end
 
 group :development do
@@ -55,6 +67,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
+  gem 'better_errors',          '~> 2.1'
+  gem "binding_of_caller"
+  gem 'awesome_print',          '~> 1.7'
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard', '~> 1.6.1' #integrate Mac notify on upper window
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
