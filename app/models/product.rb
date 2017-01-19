@@ -12,8 +12,8 @@ class Product < ApplicationRecord
   belongs_to :user
   
   # == Validations ==========================================================
-  validates :name, presence: true, length: { minimum: 5 }
-  validates :description, presence: true, length: { minimum: 10 }
+  validates_presence_of :name
+  validates_presence_of :description
 
   
   # == Scopes ===============================================================
