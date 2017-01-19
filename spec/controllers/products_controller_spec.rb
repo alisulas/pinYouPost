@@ -37,17 +37,14 @@ RSpec.describe ProductsController, :type => :controller do
   # let(:valid_session) { {} }
 
 
-describe "POST #create" do
-    context "with valid attributes" do
-      it "create new product" do
-      #   post :create, product: attributes_for(:product)
-      #   expect(product.count).to eq(1)
-        expect {
-          post :create, {:product => valid_attributes}, valid_session
-        }.to change(Product, :count).by(1)
-      end
-    end
-  end
+# describe "POST #create" do
+#     context "with valid attributes" do
+#       it "create new product" do
+#         post :create, product: attributes_for(:product)
+#         expect(Product.count).to eq(1)
+#       end
+#     end
+#   end
 
 
 
