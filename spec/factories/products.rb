@@ -1,19 +1,24 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  description        :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :integer
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
 FactoryGirl.define do
   factory :product do
     name            { Faker::Name.name }
     description     { Faker::Lorem.paragraph }
-
-
-    trait :home do
-      name            { Faker::Name.name }
-      description     { Faker::Lorem.paragraph }
-    end
-
-
-    trait :car do
-      name            { Faker::Name.name }
-      description     { Faker::Lorem.paragraph }
-    end
+    user
 
   end
 

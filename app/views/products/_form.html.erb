@@ -1,16 +1,5 @@
 <%= simple_form_for(product) do |f| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> Gambar anda tidak bisa di Upload. Kami siap membantu</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= render 'shared/error_messages', object: product %>
   <div class="field">
     <%= f.input :name, label: 'Apa yang akan anda sewakan' %>
   </div>

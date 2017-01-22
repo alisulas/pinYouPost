@@ -1,37 +1,32 @@
 # == Schema Information
 #
-# Table name: products
+# Table name: posts
 #
-#  id                 :integer          not null, primary key
-#  name               :string
-#  description        :text
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  user_id            :integer
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id         :integer          not null, primary key
+#  title      :string
+#  content    :text
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
-class Product < ApplicationRecord
+class Post < ApplicationRecord
 
   # == Constants ============================================================
   
   # == Attributes ===========================================================
   
   # == Extensions ===========================================================
-  has_attached_file :image, :styles => { :medium => "300x300>" }
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   
   # == Relationships ========================================================
   belongs_to :user
   
   # == Validations ==========================================================
-  validates_presence_of :name
-  validates_presence_of :description
-
+  validates :title, presence: true
+  validates :content, presence: true, length: { minimum: 140 } 
+  validates :user_id, presence: true
   
+
   # == Scopes ===============================================================
   
   # == Callbacks ============================================================
@@ -40,9 +35,4 @@ class Product < ApplicationRecord
   
   # == Instance Methods =====================================================
   
-
-
-
-
-
 end

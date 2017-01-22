@@ -25,12 +25,11 @@
 #  phone_number           :string(13)
 #
 
-require 'rails_helper'
-
-RSpec.describe User, type: :model do
- 
-
-  context "Association" do
-    it { should have_many(:posts).dependent(:destroy) }
+FactoryGirl.define do
+  factory :user do
+    name        { Faker::Name.name }
+    email        { Faker::Internet.email }
+    password              "password"
+    password_confirmation "password"
   end
 end
