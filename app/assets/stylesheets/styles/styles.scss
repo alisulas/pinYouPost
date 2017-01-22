@@ -1,0 +1,15 @@
+/* universal */
+
+
+@import "base/mixins";
+@import "base/variables";
+
+
+body {
+  padding-top: 60px;
+}
+
+
+.debug_dump {
+  margin: 19px 30px 12px 30px
+}

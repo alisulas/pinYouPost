@@ -1,0 +1,13 @@
+// Base assets
+
+@import "bootstrap-sprockets";
+
+@import "base/mixins";
+@import "base/variables";
+@import "bootstrap";
+
+
+// Global site styles
+@import "styles/styles";
+@import "styles/products";
+@import "styles/footer";
